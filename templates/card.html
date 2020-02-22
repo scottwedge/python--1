@@ -73,13 +73,13 @@
 
   <div class="container">
     <div class="row">
-      {%for i in range(9)%}
+      {%for i in commodity%}
       <div class="col-sm">
         <div class="card" style="width: 18rem;">
-          <img src="static/image/1.jpg" class="card-img-top" alt="...">
+          <img src="{{i['path']}}" class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">商品名字</h5>
-            <p class="card-text">这是一段有关商品描述的文字，你可以在这里描绘你的商品简介</p>
+            <h5 class="card-title">{{i['commodity_name']}}</h5>
+            <p class="card-text">{{i['commodity_about']}}</p>
             <a href="#" class="btn btn-primary">查看商品详情</a>
           </div>
         </div>

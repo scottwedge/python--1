@@ -21,6 +21,7 @@
 </head>
 
 <body>
+    <script>window.alert("{{success}}");</script>
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -35,28 +36,32 @@
             <div class="container">
                 <div class="row">
                     <div class="col-6">
-                        <form>
+                        <form action="{{url_for('release')}}" method="POST" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">商品名字</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp">
+                                <input type="text" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" name="commodity_name">
                                 <small id="emailHelp" class="form-text text-muted">不要超出15个字</small>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">商品描述</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1">
+                                <input type="text" class="form-control" id="exampleInputPassword1" name="commodity_about">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">联系方式</label>
-                                <input type="number" class="form-control" id="exampleInputPassword1">
+                                <input type="number" class="form-control" id="exampleInputPassword1" name="contact_way">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">如何称呼</label>
-                                <input type="text" class="form-control" id="exampleInputPassword1">
+                                <label for="exampleInputPassword1">你的真实姓名</label>
+                                <input type="text" class="form-control" id="exampleInputPassword1" name="name">
                             </div>
+                            <div class="form-group">
+                                    <label for="exampleInputPassword1">学号确认</label>
+                                    <input type="text" class="form-control" id="exampleInputPassword1" name="studentID">
+                                </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">价格暂定</label>
-                                <input type="number" class="form-control" id="exampleInputPassword1">
+                                <input type="number" class="form-control" id="exampleInputPassword1" name="money">
                             </div>
                             <div class="form-group form-check">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -64,7 +69,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlFile1">来为你的宝贝选择一张好看的图片吧</label>
-                                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="photograph">
                             </div>
                             <button type="submit" class="btn btn-primary">确认</button>
                         </form>
