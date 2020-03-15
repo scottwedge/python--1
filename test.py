@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 passwd = parse.quote_plus("MongoDBmima12!")
 app.config['MONGO_DBNAME'] = 'test'
-app.config['MONGO_URI'] = "mongodb+srv://dbuser:{}@xiaobai-vf6jv.gcp.mongodb.net/test?retryWrites=true&w=majority".format(passwd)
+app.config['MONGO_URI'] = "".format(passwd)
 mongo = PyMongo(app)
 user = mongo.db.user
 file = mongo.db.file
@@ -76,18 +76,6 @@ def release():
             file.insert_one(commodityinfo)
             return render_template("release.html",success='success')
     return render_template("release.html",success='请诚实填写')
-
-# @app.route('/name/<order_id>',methods = ['GET','POST'])
-# def index(order_id):
-#     return '{}'.format(order_id)
-
-# def index():
-#     myclient = pymongo.MongoClient("mongodb://localhost:27017/test")
-#     mydb = myclient["test"]
-#     mycol = mydb["test"]
-#     x = mycol.find_one()
-#     print(x)
-#     return str(x)
 
 if __name__ == '__main__':
     app.debug = True # 设置调试模式，生产模式的时候要关掉debug

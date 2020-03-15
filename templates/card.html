@@ -80,11 +80,38 @@
           <div class="card-body">
             <h5 class="card-title">{{i['commodity_name']}}</h5>
             <p class="card-text">{{i['commodity_about']}}</p>
-            <a href="#" class="btn btn-primary">查看商品详情</a>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{i['commodity_name']}}">查看商品详情
+            </button>
+            <!-- <a href="#" class="btn btn-primary">查看商品详情</a> -->
           </div>
         </div>
         <div class="span3 offset2">
           <p></p>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="{{i['commodity_name']}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="card" style="width: 33rem;">
+              <img src="{{i['path']}}" class="card-img-top" alt="{{i['commodity_name']}}">
+              <div class="card-body">
+                <h5 class="card-title">{{i['commodity_name']}}</h5>
+                <p class="card-text">{{i['commodity_about']}}</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">联系方式：{{i['contact_way']}}</li>
+                <li class="list-group-item">主人：{{i['name']}}</li>
+                <li class="list-group-item">价格：{{i['money']}}</li>
+              </ul>
+              <div class="card-body">
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       {% endfor %}
